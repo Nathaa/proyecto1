@@ -11,6 +11,7 @@ class UserController extends Controller
             'maria',
             'fernando',
             'philip',
+            'mario',
         ];
 
         return view('users')->with([
