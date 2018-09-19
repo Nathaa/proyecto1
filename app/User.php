@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    //protected $table= 'users';
     use Notifiable;
 
     /**
@@ -14,6 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //ayuda a que se puedan meter datos masivos con eloquent
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -26,4 +28,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $casts = [
+        'is_admin' => 'boolean',
+    ];
+
+    public static function findByEmail()
+    {
+    }
+
+    // indica que un usuario pertenece a una profesion
+    public function profession()
+    {
+        return $this->belongsTo(Profession::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->email == 'is_admin';
+    }
 }
