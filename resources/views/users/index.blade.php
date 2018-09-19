@@ -10,7 +10,7 @@
                  @forelse ($users as $user)
                  <li>{{ $user->name}}, ({{ $user->email}})
                  //indicar a la url a donde quiera navegar//
-                  <a href="{{ route('users.show', ['id' =>$user])}}">ver detalles</a> 
+                  <a href="{{ route('users.show', ['id' =>$user])}}">ver detalleeees</a> 
                  </li>
                  @empty
                    <li> No hay usuarios registrados.</li>
