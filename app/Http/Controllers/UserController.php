@@ -22,11 +22,11 @@ class UserController extends Controller
         return view('users.index', compact('title', 'users'));
     }
 
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
+        //$user = User::findOrFail($id);
 
-        // dd($user);
+        dd($user);
 
         return view('users.show', compact('user'));
     }

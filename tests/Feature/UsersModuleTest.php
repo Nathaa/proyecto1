@@ -32,6 +32,14 @@ class pruebatest extends TestCase
          ->assertSee('Mostrando Detalles');
     }
 
+    /**@test*/
+    public function it_displays_a_404_error_if_the_user_is_found()
+    {
+        $this->get('/usuario/999')
+         ->assertStatus(404)
+         ->assertSee('Pagina no encontrada');
+    }
+
     /**@test */
     public function it_loads_the_new_users_page()
     {
