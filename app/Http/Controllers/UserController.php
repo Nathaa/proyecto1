@@ -24,15 +24,20 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        //$user = User::findOrFail($id);
+        $user = User::findOrFail($id);
 
-        dd($user);
+        //dd($user);
 
         return view('users.show', compact('user'));
     }
 
     public function create()
     {
-        return 'Crear nuevo usuario';
+        return view('users.create');
+    }
+
+    public function store()
+    {
+        return 'Procesando la informacion';
     }
 }

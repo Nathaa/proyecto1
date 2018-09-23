@@ -22,5 +22,8 @@ Route::get('/usuario/{id}', 'UserController@show')
 ->where('id', '[0-9]+')
 ->name('users.show');
 
-Route::get('/usuario/nuevo', 'UserController@index')
+Route::get('/usuario/nuevo', 'UserController@create')
+//get vervbo para definir ruta http, solicitar y pedir informacion
 ->name('users.create');
+
+Route::post('/usuario/crear', 'UserController@store'); //metodo + url; enviar y procesar la informacion
